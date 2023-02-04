@@ -43,7 +43,9 @@ def main():
                     frame[rect[1]:rect[1]+face_img.shape[0],
                           rect[0]:rect[0]+face_img.shape[1]] = frame[rect[1]:rect[1]+face_img.shape[0],
                                                                     rect[0]:rect[0]+face_img.shape[1]] * (1 - face_img[:, :, 3:] / 255) + face_img[:, :, :3] * (face_img[:, :, 3:] / 255)
-                    cv2.imshow('cv2', frame)
+                                                                    
+            # 検出した場合も，検出しなかった場合もディスプレイへ出力する
+            cv2.imshow('cv2', frame)
 
         except:
             pass
